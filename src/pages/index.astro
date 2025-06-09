@@ -8,12 +8,32 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
 
 <BaseLayout title="Home">
   <MainCard
-    title="Welcome to DevLog!"
+    title="Welcome!"
     description="My personal blog and portfolio website"
     textOverlay="HOME"
     infoIcon="lucide:info"
   >
   <div class="space-y-8">
+      <!-- Bar -->
+      <section class="py-6">
+      <span class="footer-title">Social</span>
+      <div class="grid grid-flow-col gap-4">
+        {
+          USER_FOOTER_SOCIAL_ICONS.map((icon) => (
+            <div class="tooltip" data-tip={icon.title}>
+              <a tabindex="0" href={icon.href} aria-label={icon.ariaLabel}>
+                <Icon name={icon.svg} class="text-2xl md:text-xl" />
+              </a>
+            </div>
+          ))
+        }
+        <div class="tooltip" data-tip="RSS Feed">
+          <a tabindex="0" href="/rss.xml" aria-label="RSS Feed">
+            <Icon name="ri:rss-line" class="text-2xl md:text-xl" />
+          </a>
+        </div>
+      </div>
+      </section>
       <!-- GitHub Stats -->
       <section class="py-6">
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
