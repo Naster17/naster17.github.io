@@ -7,7 +7,7 @@ site:
   favicon: /favicon.ico 
   theme: 
     light: winter 
-    dark: dracula
+    dark: github-dark #dracula
     code: github-dark 
   date_format: ddd MMM DD YYYY 
   blog: 
@@ -67,7 +67,7 @@ user:
   avatar: /profile.png 
   sidebar: 
     social:
-      - href: "https://afdian.com/a/saroprock" 
+      - href: "" 
         ariaLabel: Support my work
         title: Support my work 
         svg: "ri:cup-line"
@@ -86,11 +86,19 @@ user:
 
   footer:
     social:
-      - href: "https://afdian.com/a/saroprock" 
-        ariaLabel: Support my work 
+      - href: "" 
+        ariaLabel: Support my work
         title: Support my work 
         svg: "ri:cup-line"
-      - href: "https://github.com/EveSunMaple"
+      - href: "https://github.com/Naster17"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"
+      - href: "https://t.me/naster17dev"
+        ariaLabel: Telegram
+        title: Telegram
+        svg: "ri:telegram-2-line"
+      - href: "https://youtu.be/dQw4w9WgXcQ"
+        ariaLabel: Youtube
+        title: Youtube
+        svg: "ri:youtube-line"
