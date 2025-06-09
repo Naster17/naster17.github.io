@@ -199,3 +199,7 @@ avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:f
 ### Result (flash: 80 bytes)
 ![image](https://github.com/user-attachments/assets/9155edd4-3019-4b29-90fb-8bb5039b4b3a)
 
+### Conclusion 
+And so we managed to reduce the size of the firmware even more than 10 times, I would say 10.5 :)   
+But will it be more than a simple experiment, or will it still be more convenient to use the super abstract C++?  
+Who knows...
