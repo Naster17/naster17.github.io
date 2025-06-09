@@ -22,22 +22,23 @@ badge: Arduino
 - Setup avr utils in your linux environment
 
 ## Get Started
-Today we're going to dive into low-level programming on a platform like Arduino, and especially AVR.
-Let's go all the way from vanilla C++ programming to low-level Assembly. 
-And this will lead us to reduce our firmware by as much as 10 times.
-It is already assumed that at least you are using Arduino IDE or PlatformIO.
+Today we're going to dive into low-level programming on a platform like Arduino, and especially AVR.  
+Let's go all the way from vanilla C++ programming to low-level Assembly.  
+And this will lead us to reduce our firmware by as much as 10 times.  
 
 I will use **Arduno Nano** and **Arduino Uno**
 
 ## Installing dependencies
-To work with C and Assembly, we will need a special set of tools and libraries related to AVR. 
+It is already assumed that at least you are using Arduino IDE or PlatformIO.
+
+To work with C and Assembly, we will need a special set of tools and libraries related to AVR.  
 Here's how to install it:
 ```bash
 sudo apt install gcc-avr binutils-avr avr-libc avrdude
 ```
-
+---
 ## C++
-We won't stay long here, I think everyone has used the basic Arduino Framework at least once. 
+I think everyone has used the basic Arduino Framework at least once.  
 But in short:
 ```cpp
 #include <Ardino.h>
@@ -55,10 +56,80 @@ void loop()
     delay(1000);                      // wait for a second
 }
 ```
-### After compiling and loading the firmware, we get (flash: 924 bytes)
-![image](https://github.com/user-attachments/assets/9b21f460-f188-4e9e-a66a-ba3bd997ebcc)
+### After compiling and flashing firmware, we get (flash: 924 bytes)
+![image](https://github.com/user-attachments/assets/e4d91d5d-9ad1-48fb-b55b-5914f5d6d40d)
 
+---
+## C
+My favorite and most interesting part is the C language.  
+And so, after installing the dependencies, we have a set of tools and libraries for the AVR platform.
+- `gcc-avr` AVR GNU C Compiler
+- `binutils-avr` Default binutils for AVR platform such as as, strip, objdump ...
+- `avr-libc` AVR C Library including avr/io.h util/delay.h ...
+- `avrdude` The main flasher to flash firmware
 
+Let's write the same code that will control the built-in led. He is also as **Blink**.
+```c
+#include <avr/io.h>
+#include <util/delay.h>
+
+#define MS_DELAY 1000
+
+int main (void) {
+    /*Set to one the fifth bit of DDRB to one
+    **Set digital pin 13 to output mode */
+    DDRB |= _BV(DDB5);
+    
+    while(1) {
+        /*Set to one the fifth bit of PORTB to one
+        **Set to HIGH the pin 13 */
+        PORTB |= _BV(PORTB5);
+
+        /*Wait 1000 ms */
+        _delay_ms(MS_DELAY);
+
+        /*Set to zero the fifth bit of PORTB
+        **Set to LOW the pin 13 */
+        PORTB &= ~_BV(PORTB5);
+
+        /*Wait 1000 ms */
+        _delay_ms(MS_DELAY);
+    }
+}
+```
+#### Compile
+Compile object (This process can be used to write makefile)  
+Here we have 2 params. **-DF_CPU=16000000UL** for CPU clock aka 16MHz and **-mmcu=atmega328p** which mean MCU type in ower case is Atmel Mega328p
+```bash
+avr-gcc -s -O2 -DF_CPU=16000000UL -mmcu=atmega328p -o main.o -c main.c
+```
+Linking firmware
+```bash
+avr-gcc -s -mmcu=atmega328p main.o -o firmware
+```
+Extract hex representation from binary
+```bash
+avr-objcopy -O ihex -R .eeprom firmware firmware.hex
+```
+After all we have HEX file with ower firmware
+
+#### Flash
+Do not forget `-D` flag to save your arduino lifespan. `-D` used to DO NOT FORMAT all flash every upload.  
+
+**Arduino Nano** Work only with 57600 baud rate for my case.  
+```bash
+avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 57600 -U flash:w:firmware.hex -v
+```
+
+**Arduino Uno** Work only with 115200 baud rate for my case.  
+```bash
+avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:firmware.hex -v
+```
+
+### After compiling and flashing firmware, we get (flash: 176 bytes)
 ![image](https://github.com/user-attachments/assets/41e986f9-4277-4d4a-8219-f6a89300b6c8)
+
+---
+## Assembly
 ![image](https://github.com/user-attachments/assets/9155edd4-3019-4b29-90fb-8bb5039b4b3a)
 
