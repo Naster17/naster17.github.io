@@ -99,7 +99,7 @@ int main (void) {
 ```
 #### Compile
 Compile object (This process can be used to write makefile)  
-Here we have 2 params. **-DF_CPU=16000000UL** for CPU clock aka 16MHz and **-mmcu=atmega328p** which mean MCU type in ower case is Atmel Mega328p
+Here we have 2 params. **-DF_CPU=16000000UL** for CPU clock aka 16MHz and **-mmcu=atmega328p** which mean MCU type in our case is Atmel Mega328p
 ```bash
 avr-gcc -s -O2 -DF_CPU=16000000UL -mmcu=atmega328p -o main.o -c main.c
 ```
@@ -111,7 +111,7 @@ Extract hex representation from binary
 ```bash
 avr-objcopy -O ihex -R .eeprom firmware firmware.hex
 ```
-After all we have HEX file with ower firmware
+After all we have HEX file with our firmware
 
 #### Flash
 Do not forget `-D` flag to save your arduino lifespan. `-D` used to DO NOT FORMAT all flash every upload.  
@@ -178,7 +178,7 @@ rjmp	.-2      	;  0xae
 ```
 
 #### Compile
-Thx `binutils` we can compile ower assembly code
+Thx `binutils` we can compile our assembly code
 ```bash
 avr-as -mmcu=atmega328p main.asm -o firmware
 ```
