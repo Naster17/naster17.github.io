@@ -56,15 +56,6 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
         </div>
       </section>
 
-      <!-- GitHub Stats -->
-      <section>
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:github" class="w-6 h-6 text-primary" />
-          <span>GitHub Statistics</span>
-        </h2>
-
-        <GitHubStats username="Naster17" showLanguages={false} showCommitGraph={true} />
-      </section>
 
       <!-- Tech Stack -->
       <section>
@@ -76,18 +67,10 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {
             [
-              { name: "Astro", icon: "simple-icons:astro", color: "oklch(0.5 0.2 300)" },
-              { name: "JavaScript", icon: "simple-icons:javascript", color: "oklch(0.8 0.2 80)" },
-              { name: "TypeScript", icon: "simple-icons:typescript", color: "oklch(0.6 0.2 250)" },
-              { name: "React", icon: "simple-icons:react", color: "oklch(0.7 0.2 200)" },
-              { name: "Node.js", icon: "simple-icons:nodedotjs", color: "oklch(0.7 0.2 140)" },
-              { name: "TailwindCSS", icon: "simple-icons:tailwindcss", color: "oklch(0.6 0.2 220)" },
-              { name: "HTML5", icon: "simple-icons:html5", color: "oklch(0.7 0.2 30)" },
-              { name: "CSS3", icon: "simple-icons:css3", color: "oklch(0.7 0.2 220)" },
-              { name: "Git", icon: "simple-icons:git", color: "oklch(0.7 0.2 30)" },
+              { name: "C", icon: "simple-icons:c", color: "oklch(0.6 0.2 210)" },
               { name: "C++", icon: "simple-icons:cplusplus", color: "oklch(0.6 0.2 240)" },
-              { name: "C#", icon: "simple-icons:csharp", color: "oklch(0.6 0.2 160)" },
               { name: "Python", icon: "simple-icons:python", color: "oklch(0.7 0.2 250)" },
+              { name: "Git", icon: "simple-icons:git", color: "oklch(0.7 0.2 30)" },
             ].map((tech) => (
               <div class="flex flex-col items-center justify-center p-4 bg-base-200 rounded-lg hover:bg-base-300 transition-colors">
                 <div class="text-3xl mb-2" style={`color: ${tech.color}`}>
@@ -99,57 +82,17 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
           }
         </div>
       </section>
-
-      <!-- Contribution Activity -->
+      
+      <!-- GitHub Stats -->
       <section>
         <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:activity" class="w-6 h-6 text-primary" />
-          <span>Recent Activity</span>
+          <Icon name="lucide:github" class="w-6 h-6 text-primary" />
+          <span>GitHub Statistics</span>
         </h2>
 
-        <div class="bg-base-200 rounded-xl p-6 overflow-x-auto">
-          <div class="flex flex-col md:flex-row gap-8 md:gap-4 md:overflow-x-auto md:pb-2">
-            {
-              [
-                {
-                  date: "January 2024",
-                  title: "Open Source Contributions",
-                  desc: "Contributed to several open source projects, focusing on performance optimizations.",
-                },
-                {
-                  date: "March 2024",
-                  title: "Initiated Frosti Project",
-                  desc: "Started development of the Frosti blog theme for Astro, focusing on modern design principles.",
-                },
-                {
-                  date: "July 2024",
-                  title: "Released Frosti v2",
-                  desc: "Published version 2 with improved responsive design and extended plugin support.",
-                },
-                {
-                  date: "March 2025",
-                  title: "Released Frosti v3",
-                  desc: "Launched version 3 of the Frosti blog theme with enhanced performance and new customization options.",
-                },
-              ].map((item, i) => (
-                <div class="relative flex gap-4 pb-2 md:pb-0 md:min-w-[250px]">
-                  <div class="flex flex-col items-center">
-                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-content text-xl">
-                      {i + 1}
-                    </div>
-                    <div class="w-0.5 h-16 bg-base-300 mt-2 md:hidden" />
-                  </div>
-                  <div>
-                    <div class="text-sm text-base-content/60 mb-1">{item.date}</div>
-                    <h3 class="text-lg font-bold">{item.title}</h3>
-                    <p class="text-base-content/80 mt-1">{item.desc}</p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
+        <GitHubStats username="Naster17" showLanguages={false} showCommitGraph={true} />
       </section>
+
     </div>
   </MainCard>
 </BaseLayout>
