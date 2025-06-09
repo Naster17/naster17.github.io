@@ -7,7 +7,7 @@ site:
   favicon: /favicon.ico 
   theme: 
     light: winter 
-    dark: github-dark #dracula
+    dark: dracula
     code: github-dark 
   date_format: ddd MMM DD YYYY 
   blog: 
