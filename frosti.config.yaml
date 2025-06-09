@@ -58,10 +58,9 @@ site:
     - id: contact
       text: Contact
       href: "https://t.me/Naster17"
-      target: _blank # 在新标签页打开
+      target: _blank
       svg: "material-symbols:send"
 
-# 用户的个人信息
 user:
   name: Naster17 
   site: "https://naster17.github.io" 
