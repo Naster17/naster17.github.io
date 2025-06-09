@@ -5,6 +5,7 @@ pubDate: "June 09 2025"
 image: /image/arduino.jpg
 categories:
   - Embedded
+  - Programming
 tags:
   - Embedded
   - Arduino
