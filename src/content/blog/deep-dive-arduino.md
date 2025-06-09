@@ -1,5 +1,5 @@
 ---
-title: "Deep dive into Arduino programming | From C++ to C to ASM"
+title: "Deep dive into Arduino programming | From C++ to Assembly"
 description: "Today we're going to dive into low-level programming on the Arduino platform. And make the firmware 10 times smaller!"
 pubDate: "June 09 2025"
 image: /image/arduino.jpg
