@@ -55,7 +55,10 @@ void loop()
     delay(1000);                      // wait for a second
 }
 ```
+### After compiling and loading the firmware, we get (flash: 924 bytes)
 ![image](https://github.com/user-attachments/assets/9b21f460-f188-4e9e-a66a-ba3bd997ebcc)
+
+
 ![image](https://github.com/user-attachments/assets/41e986f9-4277-4d4a-8219-f6a89300b6c8)
 ![image](https://github.com/user-attachments/assets/9155edd4-3019-4b29-90fb-8bb5039b4b3a)
 
