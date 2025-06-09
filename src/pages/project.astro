@@ -20,7 +20,7 @@ import RepositoryCard from "@/components/mdx/RepositoryCard.astro";
         <span>Featured Projects</span>
       </h2>
 
-      <GitHubStats username="EveSunMaple" repositoryName="Frosti" showLanguages={true} showContributors={true} />
+      <GitHubStats username="Naster17" repositoryName="esp-ninja" showLanguages={true} showContributors={true} />
     </section>
 
     <!-- My Repositories -->
@@ -31,17 +31,16 @@ import RepositoryCard from "@/components/mdx/RepositoryCard.astro";
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <RepositoryCard repo="EveSunMaple/Frosti" isPinned={true} />
-        <RepositoryCard repo="EveSunMaple/astion-static" />
-        <RepositoryCard repo="EveSunMaple/astro-update-theme" />
-        <RepositoryCard repo="EveSunMaple/Word-testing-application" />
-        <RepositoryCard repo="EveSunMaple/Smooth-Snake-Game" />
-        <RepositoryCard repo="EveSunMaple/InfinitySky" />
+        <RepositoryCard repo="Naster17/433MHz-Sniffer" isPinned={true} />
+        <RepositoryCard repo="Naster17/NetHunter-Kernels" />
+        <RepositoryCard repo="Naster17/DuckyHunter" />
+        <RepositoryCard repo="Naster17/IP-chat" />
+        <RepositoryCard repo="Naster17/btox" />
       </div>
 
       <div class="flex justify-center mt-10">
         <a
-          href="https://github.com/EveSunMaple?tab=repositories"
+          href="https://github.com/Naster17?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline gap-2"
@@ -64,19 +63,9 @@ import RepositoryCard from "@/components/mdx/RepositoryCard.astro";
           {
             [
               {
-                project: "Astro",
+                project: "Linux",
                 description: "Contributed to performance improvements and bug fixes",
-                url: "https://github.com/withastro/astro",
-              },
-              {
-                project: "TailwindCSS",
-                description: "Added new utility classes and documentation improvements",
-                url: "https://github.com/tailwindlabs/tailwindcss",
-              },
-              {
-                project: "DaisyUI",
-                description: "Contributed component enhancements and theme improvements",
-                url: "https://github.com/saadeghi/daisyui",
+                url: "https://github.com/torvalds/linux",
               },
             ].map((contrib) => (
               <li class="flex items-start gap-4">
