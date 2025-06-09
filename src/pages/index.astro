@@ -14,16 +14,8 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
     infoIcon="lucide:info"
   >
   <div class="space-y-8">
-      <!-- GitHub Stats -->
-      <section class="py-6">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:github" class="w-6 h-6 text-primary" />
-          <span>Latest Repos</span>
-        </h2>
-        <GitHubStats username="Naster17" repositoryName="esp-ninja" showLanguages={true} showContributors={true} />
-      </section>
       <!-- About -->
-    <section class="py-4">
+      <section class="py-4">
         <h2 class="text-lg font-bold">
             <a
                 href="/about"
@@ -35,7 +27,16 @@ import GitHubStats from "@/components/mdx/GitHubStats.astro";
             <Icon name="lucide:external-link" class="w-4 h-4" />
         </a>
         </h2>
-    </section>
+      </section>
+
+      <!-- GitHub Stats -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Icon name="lucide:github" class="w-6 h-6 text-primary" />
+          <span>Latest Repos</span>
+        </h2>
+        <GitHubStats username="Naster17" repositoryName="esp-ninja" showLanguages={true} showContributors={true} />
+      </section>
        
   </div>
   </MainCard>
