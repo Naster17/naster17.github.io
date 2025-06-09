@@ -39,15 +39,10 @@ site:
           href: /blog/category/Embedded
           svg: "material-symbols:memory"
           target: _self
-        - id: documentation
-          text: Documentation
-          href: /blog/category/Documentation
-          svg: "material-symbols:unknown-document-outline-rounded"
-          target: _self
-        - id: examples
-          text: Examples
-          href: /blog/category/Examples
-          svg: "material-symbols:deployed-code-outline"
+        - id: programming
+          text: Programming
+          href: /blog/category/Programming
+          svg: "material-symbols:code"
           target: _self
 
     - id: project
