@@ -56,7 +56,7 @@ void loop()
     delay(1000);                      // wait for a second
 }
 ```
-### After compiling and flashing firmware, we get (flash: 924 bytes)
+### Result (flash: 924 bytes)
 ![image](https://github.com/user-attachments/assets/e4d91d5d-9ad1-48fb-b55b-5914f5d6d40d)
 
 ---
@@ -126,7 +126,7 @@ avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 57600 -U flash:w:fi
 avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:firmware.hex -v
 ```
 
-### After compiling and flashing firmware, we get (flash: 176 bytes)
+### Result (flash: 176 bytes)
 ![image](https://github.com/user-attachments/assets/41e986f9-4277-4d4a-8219-f6a89300b6c8)
 
 ---
@@ -196,6 +196,6 @@ avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 57600 -U flash:w:fi
 avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:firmware.hex -v
 ```
 
-### After compiling and flashing firmware, we get (flash: 80 bytes)
+### Result (flash: 80 bytes)
 ![image](https://github.com/user-attachments/assets/9155edd4-3019-4b29-90fb-8bb5039b4b3a)
 
