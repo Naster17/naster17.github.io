@@ -35,7 +35,7 @@ site:
           svg: "material-symbols:ink-pen-outline-rounded"
           target: _self
         - id: embedded
-          text: Embedded Dev
+          text: Embedded
           href: /blog/category/Embedded
           svg: "material-symbols:memory"
           target: _self
