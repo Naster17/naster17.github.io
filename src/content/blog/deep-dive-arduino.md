@@ -131,5 +131,70 @@ avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:f
 
 ---
 ## Assembly
+And so now is the deepest part of this topic. Assembly. 
+And so we have 2 ways to write all the assembly code ourselves or make the compiler do it for us. 
+So, perhaps, we will choose the second one, so as not to drag it out for a long time.
+You can use the first way and write everything from scratch and [start here](https://ww1.microchip.com/downloads/en/DeviceDoc/AVR-Instruction-Set-Manual-DS40002198A.pdf)
+Let's take our compiled firmware and extract assembly code from it:
+```bash
+avr-objdump -D firmware # we use binary file not hex
+```
+```asm
+jmp	0x68	;  0x68
+jmp	0x7c	;  0x7c
+eor	r1, r1
+out	0x3f, r1	; 63
+ldi	r28, 0xFF	; 255
+ldi	r29, 0x08	; 8
+out	0x3e, r29	; 62
+out	0x3d, r28	; 61
+call	0x80	;  0x80
+jmp	0xac	;  0xac
+jmp	0	;  0x0
+sbi	0x04, 5	; 4
+sbi	0x05, 5	; 5
+ldi	r18, 0xFF	; 255
+ldi	r24, 0x7B	; 123
+ldi	r25, 0x92	; 146
+subi	r18, 0x01	; 1
+sbci	r24, 0x00	; 0
+sbci	r25, 0x00	; 0
+brne	.-8      	;  0x8a
+rjmp	.+0      	;  0x94
+nop
+cbi	0x05, 5	; 5
+ldi	r18, 0xFF	; 255
+ldi	r24, 0x7B	; 123
+ldi	r25, 0x92	; 146
+subi	r18, 0x01	; 1
+sbci	r24, 0x00	; 0
+sbci	r25, 0x00	; 0
+brne	.-8      	;  0x9e
+rjmp	.+0      	;  0xa8
+nop
+rjmp	.-42     	;  0x82
+cli
+rjmp	.-2      	;  0xae
+```
+
+#### Compile
+Thx `binutils` we can compile ower assembly code
+```bash
+avr-as -mmcu=atmega328p main.asm -o firmware
+```
+Extract hex representation from binary
+```bash
+avr-objcopy -O ihex -R .eeprom firmware firmware.hex
+```
+
+#### Flash
+```bash
+avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 57600 -U flash:w:firmware.hex -v
+```
+```bash
+avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyUSB0 -b 115200 -U flash:w:firmware.hex -v
+```
+
+### After compiling and flashing firmware, we get (flash: 80 bytes)
 ![image](https://github.com/user-attachments/assets/9155edd4-3019-4b29-90fb-8bb5039b4b3a)
 
