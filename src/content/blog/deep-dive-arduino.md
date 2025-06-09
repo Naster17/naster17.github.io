@@ -22,4 +22,8 @@ badge: Arduino
 - Setup avr utils in your linux environment
 
 ## Get Started
+Today we're going to dive into low-level programming on a platform like Arduino, and especially avr.
+Let's go all the way from vanilla C++ programming to low-level Assembly. 
+And this will lead us to reduce our firmware by as much as 20 times.
 
+I will use **Arduno Nano** and **Arduino Uno**
