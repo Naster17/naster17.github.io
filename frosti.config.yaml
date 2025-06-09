@@ -5,17 +5,17 @@ site:
   description: Personal Blog | Dev Log
   language: en 
   favicon: /favicon.ico 
-  theme: # 更多主题 https://daisyui.com/docs/themes/
-    light: winter # 主题的浅色模式
-    dark: dracula # 主题的深色模式
-    code: github-dark # 代码块的主题 https://shiki.style/themes
-  date_format: ddd MMM DD YYYY # 日期格式设置，支持自定义格式
-  blog: # 博客相关配置
-    pageSize: 8 # 每页显示的文章数量
-  menu: # 菜单配置
-    - id: home # 菜单项的唯一标识符
-      text: Home # 菜单项显示的文本
-      href: / # 菜单项链接的地址
+  theme: 
+    light: winter 
+    dark: dracula
+    code: github-dark 
+  date_format: ddd MMM DD YYYY 
+  blog: 
+    pageSize: 8 
+  menu: 
+    - id: home
+      text: Home
+      href: /
       svg: "material-symbols:home-outline-rounded"
       target: _self
     - id: about
@@ -63,42 +63,27 @@ site:
 
 # 用户的个人信息
 user:
-  name: EveSunMaple # 用户名
-  site: "https://naster17.github.io" # 用户的网站链接
-  avatar: /profile.png # 用户头像路径
-  sidebar: # 侧边栏配置
+  name: Naster17 
+  site: "https://naster17.github.io" 
+  avatar: /profile.png 
+  sidebar: 
     social:
-      - href: "https://afdian.com/a/saroprock" # 链接
-        ariaLabel: Support my work # 图标的可访问性标签
-        title: Support my work # 图标的悬浮标题
+      - href: "https://afdian.com/a/saroprock" 
+        ariaLabel: Support my work
+        title: Support my work 
         svg: "ri:cup-line"
-      - href: "https://github.com/EveSunMaple"
+      - href: "https://github.com/Naster17"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"
-      - href: "https://space.bilibili.com/438392347"
-        ariaLabel: BiliBili
-        title: BiliBili
-        svg: "ri:bilibili-line"
-      - href: "https://x.com/EveSunMaple"
-        ariaLabel: X(twitter)
-        title: X(twitter)
-        svg: "ri:twitter-line"
+
   footer:
     social:
-      - href: "https://afdian.com/a/saroprock" # 链接
-        ariaLabel: Support my work # 图标的可访问性标签
-        title: Support my work # 图标的悬浮标题
+      - href: "https://afdian.com/a/saroprock" 
+        ariaLabel: Support my work 
+        title: Support my work 
         svg: "ri:cup-line"
       - href: "https://github.com/EveSunMaple"
         ariaLabel: Github
         title: Github
         svg: "ri:github-line"
-      - href: "https://space.bilibili.com/438392347"
-        ariaLabel: BiliBili
-        title: BiliBili
-        svg: "ri:bilibili-line"
-      - href: "https://x.com/EveSunMaple"
-        ariaLabel: X(twitter)
-        title: X(twitter)
-        svg: "ri:twitter-line"
