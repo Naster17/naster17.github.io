@@ -135,6 +135,7 @@ And so now is the deepest part of this topic. Assembly.
 And so we have 2 ways to write all the assembly code ourselves or make the compiler do it for us. 
 So, perhaps, we will choose the second one, so as not to drag it out for a long time.
 You can use the first way and write everything from scratch and [start here](https://ww1.microchip.com/downloads/en/DeviceDoc/AVR-Instruction-Set-Manual-DS40002198A.pdf)
+
 Let's take our compiled firmware and extract assembly code from it:
 ```bash
 avr-objdump -D firmware # we use binary file not hex
