@@ -44,7 +44,7 @@ site:
           href: /blog/category/Examples
           svg: "material-symbols:deployed-code-outline"
           target: _self
-        # 子菜单项配置
+
     - id: project
       text: Project
       href: /project
