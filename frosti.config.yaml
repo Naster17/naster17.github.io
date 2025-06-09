@@ -34,6 +34,11 @@ site:
           href: /blog
           svg: "material-symbols:ink-pen-outline-rounded"
           target: _self
+        - id: embedded
+          text: Embedded Dev
+          href: /blog/category/Embedded
+          svg: "material-symbols:memory"
+          target: _self
         - id: documentation
           text: Documentation
           href: /blog/category/Documentation
