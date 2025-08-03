@@ -70,6 +70,10 @@ idf.py set-target esp32
 cp sdkconfig.defaults.esp32 sdkconfig
 idf.py build
 ```
+As you can see the partitions table looks like:  
+<img width="439" height="182" alt="image" src="https://github.com/user-attachments/assets/7a6a450b-9571-4829-a888-637933f449de" />
+
+
 Flash
 ```bash
 idf.py flash
