@@ -2,7 +2,7 @@
 title: "Running linux on ESP32 with 4MB Flash"
 description: "Today I'm going to show you how to run Linux on ESP32 with just only 4MB flash memory"
 pubDate: "August 03 2025"
-image: /image/arduino.jpg
+image: /image/esp32-linux.jpg
 categories:
   - Embedded
   - Programming
