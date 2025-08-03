@@ -81,14 +81,15 @@ idf.py flash
 
 ## Final Flash
 ```bash
-parttool.py $SET_BAUDRATE write_partition --partition-name linux  --input build-buildroot-esp32/images/xipImage
-parttool.py $SET_BAUDRATE write_partition --partition-name rootfs --input build-buildroot-esp32/images/rootfs.cramfs
+parttool.py -b 1000000 write_partition --partition-name linux  --input build-buildroot-esp32/images/xipImage
+parttool.py -b 1000000 write_partition --partition-name rootfs --input build-buildroot-esp32/images/rootfs.cramfs
 ```
 Connect (dont forget to add user in diagout group):
 ```bash
 apt install minicom
 minicom -b 115200 -D /dev/ttyUSB0
 ```
+<img width="1216" height="965" alt="image" src="https://github.com/user-attachments/assets/42ab79f7-c061-437a-b409-5a6d1662bd6b" />
 
 ## End
 Thank you for reading this rather short article. I tried to describe everything to the point.  
