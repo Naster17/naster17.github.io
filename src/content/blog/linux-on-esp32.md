@@ -17,6 +17,7 @@ tags:
 badge: Linux
 ---
 ## Get Started
+For a long time, no one has been surprised by running Linux on ESP with 8 and 16 MB of memory and RAM. So today we will talk about running Linux on a 4MB platform. And so straight to the point.  
 Download these packages:
 ```bash 
 apt install autoconf automake bash bc bison build-essential cmake flex gawk git gperf help2man libncurses-dev libtool libtool-bin libusb-1.0-0 python3 python3-venv rsync texinfo unzip wget cpio
