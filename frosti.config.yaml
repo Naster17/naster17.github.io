@@ -56,8 +56,8 @@ site:
     #   target: _self
     - id: contact
       text: Contact
-      href: "https://t.me/Naster17"
-      target: _blank
+      href: /contact
+      target: _self
       svg: "material-symbols:send"
 
 user:

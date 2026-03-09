@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import MainCard from "@/components/MainCard.astro";
+---
+
+<BaseLayout title="Contact">
+  <MainCard
+    title="Get in Touch 👋"
+    description="Feel free to reach out through any of these platforms."
+    textOverlay="CONTACT"
+    infoIcon="lucide:send"
+  >
+    <div class="space-y-8">
+      <section>
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          <Icon name="lucide:message-circle" class="w-6 h-6 text-primary" />
+          <span>Contact Me ✉️</span>
+        </h2>
+
+        <div class="p-4 bg-base-200/30 rounded-xl">
+          <a
+            href="https://t.me/Naster17"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-4 p-3 bg-base-100 rounded-lg hover:bg-base-200 transition-colors border border-base-200"
+          >
+            <div class="w-10 h-10 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+              <Icon name="ri:telegram-2-line" class="w-6 h-6 text-white" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-bold truncate">Telegram</h3>
+              <p class="text-sm text-base-content/70 truncate">@Naster17</p>
+            </div>
+            <Icon name="lucide:external-link" class="w-4 h-4 text-base-content/50 flex-shrink-0" />
+          </a>
+        </div>
+
+      <div class="divider my-8">
+        <Icon name="lucide:heart" class="w-10 h-10 text-primary" />
+      </div>
+
+      <div class="text-center">
+        <p class="text-base-content/80 mb-4">
+          I try to respond as soon as possible. Looking forward to hearing from you!
+        </p>
+      </div>
+    </div>
+  </MainCard>
+</BaseLayout>
