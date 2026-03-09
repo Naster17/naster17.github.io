@@ -33,17 +33,59 @@ const latestPostDate = latestPost ? dayjs(latestPost.data.pubDate).format(DATE_F
           <p class="text-xl text-base-content/80 max-w-3xl mb-8">
             My personal blog with author's topics, and also my portfolio.
           </p>
-          <div class="flex flex-wrap gap-4 justify-center">
-            <a href="/blog" class="btn btn-primary gap-2 btn-shine-effect">
-              <Icon name="lucide:book-open" class="w-5 h-5" />
-              <span>Explore Blog</span>
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          <Icon name="lucide:compass" class="w-6 h-6 text-primary" />
+          <span>Explore</span>
+        </h2>
+
+        <div class="flex flex-col gap-4 justify-center w-full">
+            <a href="/blog" class="group block bg-base-100 border border-base-300 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+              <div class="flex flex-col lg:flex-row">
+                <div class="flex-1 p-4 md:p-5">
+                  <div class="flex items-center justify-center">
+                    <h3 class="text-lg md:text-xl font-bold px-8 py-2 bg-primary rounded-full group-hover:bg-primary/80 transition-colors text-primary-content">
+                      My Blog
+                    </h3>
+                  </div>
+                  <p class="text-sm text-base-content/70 mt-2 text-center">
+                    Read articles about programming, embedded systems, hardware, and more.
+                  </p>
+                </div>
+                <div class="relative lg:w-48 h-24 lg:h-auto overflow-hidden group">
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 z-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <Icon name="lucide:arrow-right" class="w-8 h-8 text-white" />
+                  </div>
+                  <div class="w-full h-full bg-base-200 flex items-center justify-center">
+                    <Icon name="lucide:book-open" class="w-10 h-10 text-base-content/30" />
+                  </div>
+                </div>
+              </div>
             </a>
-            <a href="/about" class="btn btn-outline gap-2">
-              <Icon name="lucide:info" class="w-5 h-5" />
-              <span>Explore About</span>
+            <a href="/about" class="group block bg-base-100 border border-base-300 rounded-xl overflow-hidden hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+              <div class="flex flex-col lg:flex-row">
+                <div class="flex-1 p-4 md:p-5">
+                  <div class="flex items-center justify-center">
+                    <h3 class="text-lg md:text-xl font-bold px-8 py-2 bg-secondary rounded-full group-hover:bg-secondary/80 transition-colors text-secondary-content">
+                      About Me
+                    </h3>
+                  </div>
+                  <p class="text-sm text-base-content/70 mt-2 text-center">
+                    Learn more about me, my skills, tech stack, and interests.
+                  </p>
+                </div>
+                <div class="relative lg:w-48 h-24 lg:h-auto overflow-hidden group">
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 z-10 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <Icon name="lucide:arrow-right" class="w-8 h-8 text-white" />
+                  </div>
+                  <div class="w-full h-full bg-base-200 flex items-center justify-center">
+                    <Icon name="lucide:user" class="w-10 h-10 text-base-content/30" />
+                  </div>
+                </div>
+              </div>
             </a>
           </div>
-        </div>
       </section>
 
       <!-- Latest Blog Post -->
