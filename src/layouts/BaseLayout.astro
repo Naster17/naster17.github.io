@@ -65,9 +65,9 @@ const { title, image, headings = [], showTOC = false } = Astro.props;
     <Navbar />
 
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-4 p-4">
+      <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-2 md:gap-4 p-2 md:p-4">
         <main class="col-span-1 md:col-span-4 lg:col-span-3 bg-transparent order-1 md:order-2 mt-16 md:mt-0">
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-3 md:gap-4">
             <slot />
             <Footer />
           </div>

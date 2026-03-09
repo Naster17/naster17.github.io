@@ -540,16 +540,16 @@ code {
 // Responsive styles for all pages
 @media (max-width: 768px) {
   .blog-container {
-    @apply p-3;
+    @apply p-3 rounded-lg;
   }
 
   // Categories responsive
   .categories-grid {
-    @apply grid-cols-1 gap-4;
+    @apply grid-cols-1 gap-3;
   }
 
   .category-header {
-    @apply py-3 px-4;
+    @apply py-2 px-3;
   }
 
   .category-icon {
@@ -562,38 +562,83 @@ code {
 
   // Tags responsive
   .tags-cloud {
-    @apply gap-2;
+    @apply gap-2 justify-start;
   }
 
   .tags-content {
-    @apply px-3 py-1.5;
+    @apply px-3 py-1.5 text-sm;
   }
 
   // Archives responsive
   .archives-timeline {
-    @apply pl-6 ml-0;
+    @apply pl-4 ml-2;
   }
 
   .year-badge {
-    @apply -left-10 text-base py-1.5 px-3;
+    @apply -left-10 text-sm py-1 px-2;
   }
 
   .archive-card {
-    @apply p-4;
+    @apply p-3;
   }
 
   .archive-marker {
-    @apply w-7 h-7 -left-2;
+    @apply w-6 h-6 -left-1.5;
   }
 
   .archive-icon {
-    @apply w-3.5 h-3.5;
+    @apply w-3 h-3;
+  }
+
+  // Footer mobile
+  footer {
+    @apply p-4 rounded-lg;
+  }
+
+  footer .footer-title {
+    @apply text-sm mb-2;
+  }
+
+  // Stats box mobile
+  .stats-box {
+    @apply flex-col sm:flex-row;
+
+    .stat {
+      @apply flex-row justify-between items-center py-2;
+    }
+  }
+
+  // Post list mobile
+  .post-list {
+    @apply p-2;
+  }
+
+  .post-link {
+    @apply p-2;
+  }
+
+  // Frosti code mobile
+  .frosti-code {
+    @apply rounded-lg;
+
+    &-toolbar {
+      @apply px-2 py-1.5;
+    }
+
+    &-content {
+      @apply p-2 text-sm;
+    }
   }
 }
 
 @media (max-width: 480px) {
-  .blog-container {
+  // Base container padding
+  .grid > main {
     @apply p-2;
+  }
+
+  .blog-container {
+    @apply p-2 rounded-md;
   }
 
   // Categories responsive
@@ -601,39 +646,98 @@ code {
     @apply text-base;
   }
 
+  .category-inner {
+    @apply rounded-lg;
+  }
+
+  .category-icon {
+    @apply w-8 h-8;
+  }
+
   .post-link {
-    @apply py-2 px-3 flex-col items-start gap-1;
+    @apply py-2 px-2 flex-col items-start gap-1;
   }
 
   .post-date {
-    @apply self-start;
+    @apply self-start text-xs;
   }
 
   // Tags responsive
   .tags-item {
-    // Fixed height for small screens
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
 
   .tags-icon {
-    @apply w-3.5 h-3.5;
+    @apply w-3 h-3;
   }
 
   .tags-count {
-    @apply min-w-5 h-5 text-[0.65rem];
+    @apply min-w-4 h-4 text-[0.6rem] px-1;
   }
 
   // Archives responsive
   .archives-timeline {
-    @apply pl-5;
+    @apply pl-3;
   }
 
   .year-badge {
-    @apply -left-9 text-sm py-1 px-2.5;
+    @apply -left-8 text-xs py-0.5 px-1.5;
   }
 
   .month-title {
-    @apply text-lg;
+    @apply text-base mb-3;
+  }
+
+  .archive-title {
+    @apply text-sm;
+  }
+
+  .archive-date {
+    @apply text-xs;
+  }
+
+  // Footer
+  .footer {
+    @apply p-3;
+
+    aside p {
+      @apply text-xs;
+    }
+  }
+
+  // Stats
+  .stats {
+    @apply flex-col;
+
+    .stat-title {
+      @apply text-xs;
+    }
+
+    .stat-value {
+      @apply text-lg;
+    }
+  }
+
+  // Empty state
+  .empty-state {
+    @apply p-4 min-h-[150px];
+
+    &-text {
+      @apply text-sm;
+    }
+  }
+
+  // Heading styles
+  .frosti-heading {
+    @apply text-xl;
+  }
+
+  // Code blocks
+  pre {
+    @apply text-xs;
+    code {
+      @apply text-xs;
+    }
   }
 }
 
