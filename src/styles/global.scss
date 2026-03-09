@@ -13,6 +13,27 @@
   color-scheme: dark;
 }
 
+/* Hacker glow effects */
+[data-theme="hacker"] {
+  .text-primary {
+    text-shadow: 0 0 10px oklch(var(--p) / 0.5);
+  }
+
+  .category-card,
+  .archive-card,
+  .btn {
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 15px oklch(var(--p) / 0.3);
+    }
+  }
+
+  ::selection {
+    background: oklch(var(--p) / 0.4);
+    color: oklch(var(--pc));
+  }
+}
+
 /* Global styles with nesting support */
 html {
   @apply scroll-smooth;
@@ -263,7 +284,11 @@ code {
 @mixin category-color-variant($color-var) {
   .category-#{$color-var} {
     .category-header {
-      background: linear-gradient(120deg, oklch(var(--#{$color-var}) / 0.1), oklch(var(--#{$color-var}) / 0.05));
+      background: linear-gradient(
+        120deg,
+        oklch(var(--#{$color-var}) / 0.1),
+        oklch(var(--#{$color-var}) / 0.05)
+      );
     }
 
     .category-icon {

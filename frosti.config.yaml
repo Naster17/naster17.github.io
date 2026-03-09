@@ -2,16 +2,16 @@ site:
   tab: Naster17
   title: Naster17
   description: Personal Blog | Portfolio | Curriculum
-  language: en 
-  favicon: /favicon.ico 
-  theme: 
-    light: winter 
-    dark: dracula
-    code: github-dark 
-  date_format: ddd MMM DD YYYY 
-  blog: 
-    pageSize: 8 
-  menu: 
+  language: en
+  favicon: /favicon.ico
+  theme:
+    light: winter
+    dark: hacker
+    code: github-dark
+  date_format: ddd MMM DD YYYY
+  blog:
+    pageSize: 8
+  menu:
     - id: home
       text: Home
       href: /
@@ -61,14 +61,14 @@ site:
       svg: "material-symbols:send"
 
 user:
-  name: Naster17 
-  site: "https://naster17.github.io" 
-  avatar: /profile.png 
-  sidebar: 
+  name: Naster17
+  site: "https://naster17.github.io"
+  avatar: /profile.png
+  sidebar:
     social:
-      - href: "" 
+      - href: ""
         ariaLabel: Support my work
-        title: Support my work 
+        title: Support my work
         svg: "ri:cup-line"
       - href: "https://github.com/Naster17"
         ariaLabel: Github
@@ -85,9 +85,9 @@ user:
 
   footer:
     social:
-      - href: "" 
+      - href: ""
         ariaLabel: Support my work
-        title: Support my work 
+        title: Support my work
         svg: "ri:cup-line"
       - href: "https://github.com/Naster17"
         ariaLabel: Github
