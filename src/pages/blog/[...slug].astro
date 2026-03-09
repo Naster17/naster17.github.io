@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import License from "@components/widgets/License.astro";
 import PostInfo from "@components/widgets/PostInfo.astro";
 import PostFilter from "@components/widgets/PostFilter.astro";
+import Giscus from "@components/widgets/Giscus.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import dayjs from "@utils/dayjs";
 import { DATE_FORMAT } from "@config";
@@ -56,4 +57,6 @@ const displayDate = blog.data.pubDate ? dayjs(blog.data.pubDate).format(DATE_FOR
       </div>
     </div>
   </MainCard>
+
+  <Giscus />
 </BaseLayout>

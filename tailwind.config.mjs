@@ -20,16 +20,40 @@ export default {
   daisyui: {
     themes: [
       {
+        winter: {
+          primary: "#1d4ed8",
+          "primary-content": "#ffffff",
+          secondary: "#0ea5e9",
+          "secondary-content": "#ffffff",
+          accent: "#f59e0b",
+          "accent-content": "#ffffff",
+          neutral: "#1f2937",
+          "neutral-content": "#f3f4f6",
+          "base-100": "#ffffff",
+          "base-200": "#f3f4f6",
+          "base-300": "#e5e7eb",
+          "base-content": "#1f2937",
+          info: "#0ea5e9",
+          "info-content": "#ffffff",
+          success: "#22c55e",
+          "success-content": "#ffffff",
+          warning: "#f59e0b",
+          "warning-content": "#ffffff",
+          error: "#ef4444",
+          "error-content": "#ffffff",
+        },
+      },
+      {
         hacker: {
-          primary: "#22d3ee", // Cyan
+          primary: "#22d3ee",
           "primary-content": "#000000",
-          secondary: "#34d399", // Emerald
+          secondary: "#34d399",
           "secondary-content": "#000000",
-          accent: "#fbbf24", // Amber
+          accent: "#fbbf24",
           "accent-content": "#000000",
-          neutral: "#0f172a", // Dark slate
+          neutral: "#0f172a",
           "neutral-content": "#94a3b8",
-          "base-100": "#030712", // Near black
+          "base-100": "#030712",
           "base-200": "#111827",
           "base-300": "#1f2937",
           "base-content": "#e2e8f0",
@@ -43,8 +67,8 @@ export default {
           "error-content": "#000000",
         },
       },
-    ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "hacker", // name of one of the included themes for dark mode
-    logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
+    ],
+    darkTheme: "hacker",
+    logs: false,
   },
 };

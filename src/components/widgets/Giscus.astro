@@ -1,0 +1,50 @@
+---
+import { t } from "@config";
+---
+
+<div class="mt-8">
+  <div class="bg-base-100 rounded-xl border border-base-300 shadow-sm p-4 md:p-6">
+    <h3 class="text-xl font-bold mb-4">{t("label.comments") || "Comments"}</h3>
+    <div class="giscus-container">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo={import.meta.env.PUBLIC_GISCUS_REPO || "Naster17/naster17.github.io"}
+        data-repo-id={import.meta.env.PUBLIC_GISCUS_REPO_ID || ""}
+        data-category={import.meta.env.PUBLIC_GISCUS_CATEGORY || "Comments"}
+        data-category-id={import.meta.env.PUBLIC_GISCUS_CATEGORY_ID || ""}
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme={import.meta.env.PUBLIC_GISCUS_THEME || "dark"}
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </div>
+  </div>
+</div>
+
+<script>
+  function updateGiscusTheme(theme: string) {
+    const giscusFrame = document.querySelector<HTMLIFrameElement>('.giscus-frame');
+    if (giscusFrame) {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const giscusTheme = theme === 'hacker' ? 'dark' : 'light';
+      giscusFrame.contentWindow?.postMessage(
+        { giscus: { setConfig: { theme: giscusTheme } } },
+        'https://giscus.app'
+      );
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    updateGiscusTheme('initial');
+  });
+
+  document.addEventListener('theme-changed', () => {
+    updateGiscusTheme('changed');
+  });
+</script>

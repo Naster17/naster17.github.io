@@ -1,5 +1,6 @@
 en:
   label:
+    comments: Comments
     noTag: No tags assigned
     tagCard: Tags
     tagPage: Tag
@@ -420,6 +421,7 @@ de:
     12: Dezember
 ru:
   label:
+    comments: Комментарии
     noTag: Теги не назначены
     tagCard: Теги
     tagPage: Тег
