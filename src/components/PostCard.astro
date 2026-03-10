@@ -1,25 +1,25 @@
 ---
 import { Image } from "astro:assets";
-import dayjs from "@utils/dayjs";
 import { DATE_FORMAT } from "@config";
 import type { PostData } from "@interfaces/data";
-import Heading from "./widgets/Heading.astro";
-import PostInfo from "./widgets/PostInfo.astro";
-import PostFilter from "./widgets/PostFilter.astro";
-import Card from "./temple/Card.astro";
+import dayjs from "@utils/dayjs";
 import { Icon } from "astro-icon/components";
+import Card from "./temple/Card.astro";
+import Heading from "./widgets/Heading.astro";
+import PostFilter from "./widgets/PostFilter.astro";
+import PostInfo from "./widgets/PostInfo.astro";
 
 const {
-  title,
-  image,
-  pubDate,
-  description,
-  badge,
-  categories = [],
-  tags = [],
-  word = "0",
-  time = "0",
-  url = decodeURIComponent(Astro.url.toString()),
+	title,
+	image,
+	pubDate,
+	description,
+	badge,
+	categories = [],
+	tags = [],
+	word = "0",
+	time = "0",
+	url = decodeURIComponent(Astro.url.toString()),
 } = Astro.props as PostData;
 
 const displayDate = pubDate ? dayjs(pubDate).format(DATE_FORMAT) : "";

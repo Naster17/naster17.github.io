@@ -1,12 +1,15 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import BaseCard from "@components/BaseCard.astro";
-import { t } from "@config";
-import { Icon } from "astro-icon/components";
-import dayjs from "@utils/dayjs";
-import { DATE_FORMAT } from "@config";
 import type { CollectionEntry } from "astro:content";
-import { getAllPosts, getCategoriesWithPosts, getCategoryColorClass } from "@utils/blogUtils";
+import BaseCard from "@components/BaseCard.astro";
+import { DATE_FORMAT, t } from "@config";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+	getAllPosts,
+	getCategoriesWithPosts,
+	getCategoryColorClass,
+} from "@utils/blogUtils";
+import dayjs from "@utils/dayjs";
+import { Icon } from "astro-icon/components";
 
 // 获取所有博客文章
 const allPosts = await getAllPosts();
@@ -20,10 +23,10 @@ categoryEntries.sort((a, b) => a[0].localeCompare(b[0]));
 
 // 对每个分类中的文章按日期排序（最新的排在前面）
 categoryEntries.forEach(([_, posts]) => {
-  posts.sort(
-    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
-  );
+	posts.sort(
+		(a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+			new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+	);
 });
 
 // 统计总分类数

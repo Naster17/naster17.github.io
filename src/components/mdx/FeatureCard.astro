@@ -1,16 +1,16 @@
 ---
 export interface FeatureCardProps {
-  title: string;
-  description: string;
-  icon: string;
-  color?: string;
+	title: string;
+	description: string;
+	icon: string;
+	color?: string;
 }
 
 const {
-  title,
-  description,
-  icon,
-  color = "oklch(0.6 0.2 250)", // Default blue color
+	title,
+	description,
+	icon,
+	color = "oklch(0.6 0.2 250)", // Default blue color
 } = Astro.props as FeatureCardProps;
 
 import { Icon } from "astro-icon/components";

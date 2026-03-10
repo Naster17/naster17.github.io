@@ -1,34 +1,40 @@
 ---
 export interface FriendCardProps {
-  name: string;
-  avatar: string;
-  description: string;
-  url: string;
-  type?: "friend" | "tech" | "contributor";
+	name: string;
+	avatar: string;
+	description: string;
+	url: string;
+	type?: "friend" | "tech" | "contributor";
 }
 
-const { name, avatar, description, url, type = "friend" } = Astro.props as FriendCardProps;
+const {
+	name,
+	avatar,
+	description,
+	url,
+	type = "friend",
+} = Astro.props as FriendCardProps;
 
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 // Define type-based styling
 const typeConfig = {
-  friend: {
-    bgClass: "bg-gradient-to-br from-primary/20 to-base-100",
-    iconName: "lucide:users",
-    borderClass: "border-primary/30",
-  },
-  tech: {
-    bgClass: "bg-gradient-to-br from-secondary/20 to-base-100",
-    iconName: "lucide:code-2",
-    borderClass: "border-secondary/30",
-  },
-  contributor: {
-    bgClass: "bg-gradient-to-br from-accent/20 to-base-100",
-    iconName: "lucide:git-pull-request",
-    borderClass: "border-accent/30",
-  },
+	friend: {
+		bgClass: "bg-gradient-to-br from-primary/20 to-base-100",
+		iconName: "lucide:users",
+		borderClass: "border-primary/30",
+	},
+	tech: {
+		bgClass: "bg-gradient-to-br from-secondary/20 to-base-100",
+		iconName: "lucide:code-2",
+		borderClass: "border-secondary/30",
+	},
+	contributor: {
+		bgClass: "bg-gradient-to-br from-accent/20 to-base-100",
+		iconName: "lucide:git-pull-request",
+		borderClass: "border-accent/30",
+	},
 };
 
 const { bgClass, iconName, borderClass } = typeConfig[type];

@@ -1,27 +1,27 @@
 ---
 import { Icon } from "astro-icon/components";
+import { SITE_MENU, SITE_TITLE } from "../config";
 import ThemeToggle from "./widgets/ThemeToggle.astro";
-import { SITE_TITLE, SITE_MENU } from "../config";
 
 // Get current path to determine active link
 const currentPath = Astro.url.pathname;
 
 // Type safely process SITE_MENU before rendering
 type SubMenuItem = {
-  id: string;
-  text: string;
-  href: string;
-  svg: string;
-  target?: string;
+	id: string;
+	text: string;
+	href: string;
+	svg: string;
+	target?: string;
 };
 
 type MenuItem = {
-  id: string;
-  text: string;
-  href: string;
-  svg: string;
-  target?: string;
-  subItems?: SubMenuItem[];
+	id: string;
+	text: string;
+	href: string;
+	svg: string;
+	target?: string;
+	subItems?: SubMenuItem[];
 };
 
 // Ensure the menu is properly typed

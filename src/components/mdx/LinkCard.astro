@@ -1,24 +1,24 @@
 ---
 export interface LinkCardProps {
-  title: string;
-  desc: string;
-  url: string;
-  img?: string;
-  badge?: string;
-  target?: string;
-  icon?: string;
-  categories?: string[];
+	title: string;
+	desc: string;
+	url: string;
+	img?: string;
+	badge?: string;
+	target?: string;
+	icon?: string;
+	categories?: string[];
 }
 
 const {
-  title,
-  img,
-  desc,
-  url,
-  badge,
-  target = "_blank",
-  icon = "lucide:link",
-  categories = [],
+	title,
+	img,
+	desc,
+	url,
+	badge,
+	target = "_blank",
+	icon = "lucide:link",
+	categories = [],
 } = Astro.props as LinkCardProps;
 
 import { Image } from "astro:assets";

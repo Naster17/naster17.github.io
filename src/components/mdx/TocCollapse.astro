@@ -1,8 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+
 interface Props {
-  headings: { id: string; text: string; level: number }[];
-  title?: string;
+	headings: { id: string; text: string; level: number }[];
+	title?: string;
 }
 
 const { headings = [], title = "Table of Contents" } = Astro.props;
