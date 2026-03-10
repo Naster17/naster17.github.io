@@ -1,19 +1,22 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { DATE_FORMAT } from "@config";
+import dayjs from "@utils/dayjs";
 import { Icon } from "astro-icon/components";
 import MainCard from "@/components/MainCard.astro";
 import GitHubStats from "@/components/mdx/GitHubStats.astro";
-import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
-import dayjs from "@utils/dayjs";
-import { DATE_FORMAT } from "@config";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
-const sortedPosts = posts.sort((a, b) => 
-  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+const sortedPosts = posts.sort(
+	(a, b) =>
+		new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 const latestPost = sortedPosts[0];
-const latestPostDate = latestPost ? dayjs(latestPost.data.pubDate).format(DATE_FORMAT) : "";
+const latestPostDate = latestPost
+	? dayjs(latestPost.data.pubDate).format(DATE_FORMAT)
+	: "";
 ---
 
 <BaseLayout title="Home">
@@ -138,6 +141,8 @@ const latestPostDate = latestPost ? dayjs(latestPost.data.pubDate).format(DATE_F
                     width={800}
                     height={400}
                     format="webp"
+                    loading="eager"
+                    fetchpriority="high"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
